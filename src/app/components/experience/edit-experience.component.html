@@ -1,0 +1,23 @@
+<div class="content" id="form">
+
+    <div class="content-title">
+      <span class="content-element" id="content-element-title">Edit Experience</span>
+    </div>
+  
+    <div class="content-card">
+      <form class="form" (ngSubmit)="updateExperience()">
+          <!--<label for="xpTitle">Title</label><br>-->
+          <input class="input" type="text" placeholder="Title" size="100" [(ngModel)]="xp.title" name="xpTitle">
+          <input class="input" type="text" placeholder="Company" size="100" [(ngModel)]="xp.company" name="xpCompany">
+          <input class="input" type="text" placeholder="Avatar URL" size="100" [(ngModel)]="xp.avatarURL" name="xpAvatarURL">
+          <input class="input" type="text" placeholder="Date: from" size="100" [(ngModel)]="xp.fromdate" name="xpFromdate">
+          <input class="input" type="text" placeholder="Date: to" size="100" [(ngModel)]="xp.todate" name="xpTodate">
+          <input class="input" type="text" placeholder="Description" size="100" [(ngModel)]="xp.description" name="xpDescription">
+          <div class="form-spacer"></div>
+          <input type="image" title="Edit experience" class="button" src="../../../assets/img/icon_accept.png">          
+          <img title="Go back" class="button" src="../../../assets/img/icon_left.png" alt="back" routerLink="/main">
+          <!--<button class="submit" type="submit">Add new Experience</button>-->
+      </form>
+    </div>
+    
+</div>

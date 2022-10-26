@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    /*Dark mode*/
+    --background: #0B132B;
+    --toolbar: #3A506B;
+    --toolbar-font: #FFFFFF;
+    --detail: #5BC0BE;
+    --boxes: #1C2541;
+}
+
+body.light{
+    /*Light mode*/
+    --background: #FFFFFF;
+    --toolbar: #3A506B;
+    --toolbar-font: #FFFFFF;
+    --detail: #1C2541;
+    --boxes: #5BC0BE;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--detail);
+    background-color: var(--background);
+}

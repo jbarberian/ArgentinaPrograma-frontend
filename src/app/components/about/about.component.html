@@ -1,0 +1,30 @@
+<div>
+
+    <a title="Edit cover"><img class="button" src="../../../assets/img/icon_edit.png" alt="ed"></a>
+    <!--<a title="Edit cover" href="/edit-cover"><img class="button" src="../../../assets/img/icon_edit.png" alt="ed"></a>-->
+    <div class="cover-container" style="background-image: url({{p.coverURL}});"></div>
+  
+</div>
+  
+<div>
+
+    <div class="about-container">
+  
+      <div class="element" id="fullname">
+       <img class="button" src="../../../assets/img/icon_edit.png" alt="ed">
+        {{p.name}}
+      </div>
+  
+      <div class="element" id="fulltitle">{{p.position}}</div>
+      <div class="element" id="description">{{p.description}}</div>
+      
+      
+    </div>
+
+    <img *ngIf="!p.avatarURL" alt="Avatar" id="avatar" src="../../../assets/img/avatar.jpg">
+    <img *ngIf="p.avatarURL" alt="Avatar" id="avatar" [src]="p.avatarURL">
+    
+    <a title="Edit Avatar"><img class="button" src="../../../assets/img/icon_edit.png" alt="ed" id="avatar-edit"></a>
+    <!--<a title="Edit Avatar" href="/edit-avatar"><img class="button" src="../../../assets/img/icon_edit.png" alt="ed" id="avatar-edit"></a>-->
+
+  </div>

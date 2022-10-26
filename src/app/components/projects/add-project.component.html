@@ -1,0 +1,18 @@
+<div class="content" id="form">
+    <div class="content-title">
+      <span class="content-element" id="content-element-title">Add new Project</span>
+    </div>
+  
+    <div class="content-card">
+      <form class="form" (ngSubmit)="createProject()">
+          <input class="input" type="text" placeholder="Title" size="100" [(ngModel)]="pjTitle" name="pjTitle">
+          <input class="input" type="text" placeholder="Company" size="100" [(ngModel)]="pjCompany" name="pjCompany">
+          <input class="input" type="text" placeholder="Avatar URL" size="100" [(ngModel)]="pjAvatarURL" name="pjAvatarURL">
+          <input class="input" type="text" placeholder="Datespan" size="100" [(ngModel)]="pjDatespan" name="pjDatespan">
+          <input class="input" type="text" placeholder="Description" size="100" [(ngModel)]="pjDescription" name="pjDescription">
+          <div class="form-spacer"></div>
+          <input type="image" title="Add new project" class="button" src="../../../assets/img/icon_accept.png">          
+          <img title="Go back" class="button" src="../../../assets/img/icon_left.png" alt="back" routerLink="/main">
+      </form>
+    </div>
+</div>

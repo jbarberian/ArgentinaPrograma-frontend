@@ -1,0 +1,18 @@
+<div class="content" id="form">
+
+    <div class="content-title">
+      <span class="content-element" id="content-element-title">Edit Skill</span>
+    </div>
+  
+    <div class="content-card">
+      <form class="form" (ngSubmit)="updateSkill()">
+          <!--<label for="xpTitle">Title</label><br>-->
+          <input class="input" type="text" placeholder="Name" size="100" [(ngModel)]="sk.name" name="skName">
+          <input class="input" type="text" placeholder="Value" size="100" [(ngModel)]="sk.percentage" name="skValue">
+          <div class="form-spacer"></div>
+          <input type="image" title="Edit experience" class="button" src="../../../assets/img/icon_accept.png">          
+          <img title="Go back" class="button" src="../../../assets/img/icon_left.png" alt="back" routerLink="/main">
+      </form>
+    </div>
+    
+</div>

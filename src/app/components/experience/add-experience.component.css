@@ -1,0 +1,56 @@
+.content{
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-left: 10%;
+
+}
+
+.form{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.button{
+    float: right;
+    width: 3%;
+}
+
+.submit{
+    float: right;
+}
+
+.content-buttons{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-radius: 0 0 10px 10px;
+    border: thin solid var(--toolbar);
+    padding:10px;
+    margin-bottom: 10px;
+}
+
+.form-spacer{
+    height: 50px;
+}
+
+/*
+.submit{
+    float: right;
+    height: 50px;
+    color: var(--toolbar-font);
+    background-color: var(--toolbar);
+    border-radius: 10px;
+    border: medium solid var(--detail);
+    opacity:1;
+}
+    
+.submit:hover{
+    background-color:var(--boxes);
+}
+*/
+
+.input{
+    border-radius: 10px;
+    width: 100%;
+
+}

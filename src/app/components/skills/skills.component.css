@@ -1,0 +1,22 @@
+.pie {
+    /*--porcentaje: 50%;*/
+  width: 100px;
+  height: 100px;
+  background-image: conic-gradient(var(--detail) var(--porcentaje), var(--boxes) 0%, var(--toolbar) 150%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px;
+}
+
+.centro {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--boxes);
+  border-radius: 50%;
+  font-size: 25px;
+}

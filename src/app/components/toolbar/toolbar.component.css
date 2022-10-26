@@ -1,0 +1,36 @@
+.toolbar{
+    display: flex;
+    align-items: center;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: var(--toolbar-font);
+    background-color: var(--toolbar);
+    }
+
+.toolbar-element{
+    padding:10px;
+}
+
+#toolbar-login{
+    border: medium solid var(--toolbar-font);
+    border-radius: 50%;
+}
+
+#toolbar-login:hover {
+    background-color: var(--boxes);
+}
+
+#toolbar-mode{
+    border: medium solid var(--toolbar-font);
+    border-radius: 50%;
+}
+
+#toolbar-mode:hover {
+    background-color:var(--boxes);
+}
+
+.spacer {
+    flex: 1;
+}

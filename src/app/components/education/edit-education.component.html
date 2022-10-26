@@ -1,0 +1,20 @@
+<div class="content" id="form">
+
+    <div class="content-title">
+      <span class="content-element" id="content-element-title">Edit Education</span>
+    </div>
+  
+    <div class="content-card">
+      <form class="form" (ngSubmit)="updateEducation()">
+          <input class="input" type="text" placeholder="Title" size="100" [(ngModel)]="ed.title" name="edTitle">
+          <input class="input" type="text" placeholder="Company" size="100" [(ngModel)]="ed.company" name="edCompany">
+          <input class="input" type="text" placeholder="Avatar URL" size="100" [(ngModel)]="ed.avatarURL" name="edAvatarURL">
+          <input class="input" type="text" placeholder="Datespan" size="100" [(ngModel)]="ed.datespan" name="edDatespan">
+          <input class="input" type="text" placeholder="Description" size="100" [(ngModel)]="ed.description" name="edDescription">
+          <div class="form-spacer"></div>
+          <input type="image" title="Edit Education" class="button" src="../../../assets/img/icon_accept.png">          
+          <img title="Go back" class="button" src="../../../assets/img/icon_left.png" alt="back" routerLink="/main">
+      </form>
+    </div>
+    
+</div>

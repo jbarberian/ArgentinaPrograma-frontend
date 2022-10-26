@@ -1,0 +1,23 @@
+<div class="content">
+
+    <div class="content-title">
+      <span class="content-element" id="content-element-title">Proyectos</span>
+      <div class="spacer"></div>
+      <img title="Add Project" class="button" src="../../../assets/img/icon_add.png" alt="add" routerLink="/addProject">
+    </div>
+
+    <div *ngFor="let project of pj" class="content-card">
+      <img *ngIf="project.avatarURL" class="content-element" alt="content-logo" [src]="project.avatarURL">
+      <img *ngIf="!project.avatarURL" class="content-element" alt="content-logo" src="../../../assets/img/avatar.jpg">
+      <span class="content-element">
+        <span class="content-card-title">{{project.title}}</span>
+        <span class="content-card-place">{{project.company}}</span>
+        <span class="content-card-thin">{{project.datespan}}</span>
+        <span class="content-card-thin">{{project.description}}</span>
+      </span>
+      <div class="spacer"></div>
+      <img title="Delete Project" class="button" src="../../../assets/img/icon_erase.png" alt="rm" (click)="deleteProject(project.id)">
+      <img title="Edit Project" class="button" src="../../../assets/img/icon_edit.png" alt="ed">
+    </div>
+
+  </div>

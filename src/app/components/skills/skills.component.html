@@ -1,0 +1,18 @@
+<div class="content">
+
+    <div class="content-title">
+      <span class="content-element" id="content-element-title">Hard & Soft Skills</span>
+      <div class="spacer"></div>
+      <img title="Add Skill" class="button" src="../../../assets/img/icon_add.png" alt="add" routerLink="/addSkill">
+    </div>
+
+    <div *ngFor="let skill of sk" class="content-card">
+
+        <div class="pie" [ngStyle]="{'--porcentaje': skill.percentage}"><div id="valor" class="centro">{{skill.percentage}}</div></div>
+        <span class="content-card-title">{{skill.name}}</span>
+        <div class="spacer"></div>
+        <img title="Delete Skill" class="button" src="../../../assets/img/icon_erase.png" alt="rm" (click)="deleteSkill(skill.id)">
+        <img title="Edit Skill" class="button" src="../../../assets/img/icon_edit.png" alt="ed" routerLink="/updateSkill/{{skill.id}}">
+    </div>
+
+</div>
