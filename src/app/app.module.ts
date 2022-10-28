@@ -13,7 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AddExperienceComponent } from './components/experience/add-experience.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -24,6 +24,7 @@ import { AddSkillComponent } from './components/skills/add-skill.component';
 import { EditSkillComponent } from './components/skills/edit-skill.component';
 import { AddProjectComponent } from './components/projects/add-project.component';
 import { EditProjectComponent } from './components/projects/edit-project.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -44,13 +45,15 @@ import { EditProjectComponent } from './components/projects/edit-project.compone
     EditSkillComponent,
     AddProjectComponent,
     EditProjectComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    DragDropModule
+    DragDropModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

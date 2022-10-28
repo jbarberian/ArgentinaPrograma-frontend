@@ -36,7 +36,7 @@ export class EditEducationComponent implements OnInit {
   }
 
   /* Update method (U)*/
-  updateEducation(): void{
+  updateEducation(): void {
     const id = this.getCurrentEducationID();
         
     this.edServ.updateEducation(id, this.ed).subscribe(

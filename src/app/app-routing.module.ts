@@ -8,8 +8,12 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { AddSkillComponent } from './components/skills/add-skill.component';
 import { EditSkillComponent } from './components/skills/edit-skill.component';
 import { AddProjectComponent } from './components/projects/add-project.component';
+import { EditProjectComponent } from './components/projects/edit-project.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
+  { path: '', redirectTo:'login', pathMatch:'full'},
+  { path: 'login', component: LoginComponent},
   { path: 'main', component: PortfolioComponent},
   { path: 'addExperience', component: AddExperienceComponent },
   { path: 'updateExperience/:id', component: EditExperienceComponent },
@@ -17,7 +21,8 @@ const routes: Routes = [
   { path: 'updateEducation/:id', component: EditEducationComponent},
   { path: 'addSkill', component: AddSkillComponent},
   { path: 'updateSkill/:id', component: EditSkillComponent},
-  { path: 'addProject', component: AddProjectComponent}
+  { path: 'addProject', component: AddProjectComponent},
+  { path: 'updateProject/:id', component: EditProjectComponent}
 ];
 
 @NgModule({

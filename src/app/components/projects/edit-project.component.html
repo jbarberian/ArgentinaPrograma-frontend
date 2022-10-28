@@ -1,1 +1,20 @@
-<p>edit-project works!</p>
+<div class="content" id="form">
+
+    <div class="content-title">
+      <span class="content-element" id="content-element-title">Edit Project</span>
+    </div>
+  
+    <div class="content-card">
+      <form class="form" (ngSubmit)="updateProject()">
+          <input class="input" type="text" placeholder="Title" size="100" [(ngModel)]="pj.title" name="pjTitle">
+          <input class="input" type="text" placeholder="Company" size="100" [(ngModel)]="pj.company" name="pjCompany">
+          <input class="input" type="text" placeholder="Avatar URL" size="100" [(ngModel)]="pj.avatarURL" name="pjAvatarURL">
+          <input class="input" type="text" placeholder="Datespan" size="100" [(ngModel)]="pj.datespan" name="pjDatespan">
+          <input class="input" type="text" placeholder="Description" size="100" [(ngModel)]="pj.description" name="pjDescription">
+          <div class="form-spacer"></div>
+          <input type="image" title="Edit Project" class="button" src="../../../assets/img/icon_accept.png">          
+          <img title="Go back" class="button" src="../../../assets/img/icon_left.png" alt="back" routerLink="/main">
+      </form>
+    </div>
+    
+</div>
