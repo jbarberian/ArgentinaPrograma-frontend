@@ -24,6 +24,7 @@ import { AddSkillComponent } from './components/skills/add-skill.component';
 import { EditSkillComponent } from './components/skills/edit-skill.component';
 import { AddProjectComponent } from './components/projects/add-project.component';
 import { EditProjectComponent } from './components/projects/edit-project.component';
+import { EditAboutComponent } from './components/about/edit-about.component';
 import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
@@ -46,6 +47,7 @@ import { LoginComponent } from './components/login/login.component';
     AddProjectComponent,
     EditProjectComponent,
     LoginComponent,
+    EditAboutComponent,
   ],
   imports: [
     BrowserModule,

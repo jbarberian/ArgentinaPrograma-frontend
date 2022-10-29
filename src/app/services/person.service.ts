@@ -12,7 +12,14 @@ export class PersonService {
 
   constructor(private http:HttpClient){}
 
-  getPerson(): Observable<Person>{
+  /* Read method (R)*/
+  public getPerson(): Observable<Person>{
     return this.http.get<Person>(this.url+"/find/p/1");
   }
+
+  /* Update method (U)*/
+  public updatePerson(p: Person): Observable<any>{
+    return this.http.put<any>(this.url+"/update/p/1", p);
+  } 
+  
 }

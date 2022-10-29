@@ -9,12 +9,14 @@ import { AddSkillComponent } from './components/skills/add-skill.component';
 import { EditSkillComponent } from './components/skills/edit-skill.component';
 import { AddProjectComponent } from './components/projects/add-project.component';
 import { EditProjectComponent } from './components/projects/edit-project.component';
+import { EditAboutComponent } from './components/about/edit-about.component';
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'login', pathMatch:'full'},
   { path: 'login', component: LoginComponent},
   { path: 'main', component: PortfolioComponent},
+  { path: 'updateAbout', component: EditAboutComponent},
   { path: 'addExperience', component: AddExperienceComponent },
   { path: 'updateExperience/:id', component: EditExperienceComponent },
   { path: 'addEducation', component: AddEducationComponent },
