@@ -9,11 +9,20 @@ import { SkillService } from 'src/app/services/skill.service';
 })
 export class SkillsComponent implements OnInit {
 
+  isLogged = false;
+
   constructor(private skServ: SkillService){}
 
   sk: Skill[] = [];
 
   ngOnInit(): void {
+    var token = sessionStorage.getItem("currentUser");
+
+    if (token){  
+      this.isLogged = true;
+      console.log(this.isLogged);
+    }
+    
     this.loadSkills();
   }
 

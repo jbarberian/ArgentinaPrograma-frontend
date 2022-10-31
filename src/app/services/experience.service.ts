@@ -9,10 +9,8 @@ import { environment } from 'src/environments/environment';
 })
 export class ExperienceService {
 
-  //url="http://localhost:8080";
-  url=environment.apiURL;
-
-
+  url="http://localhost:8080";
+  //url=environment.apiURL;
 
   constructor(private http:HttpClient){}
 

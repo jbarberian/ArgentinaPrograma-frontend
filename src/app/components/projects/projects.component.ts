@@ -9,11 +9,20 @@ import { ProjectService } from 'src/app/services/project.service';
 })
 export class ProjectsComponent implements OnInit {
 
+  isLogged = false;
+
   constructor(private pjServ: ProjectService){}
 
   pj: Project[] = [];
 
   ngOnInit(): void {
+    var token = sessionStorage.getItem("currentUser");
+
+    if (token){  
+      this.isLogged = true;
+      console.log(this.isLogged);
+    }
+    
     this.loadProjects();
   }
 

@@ -9,11 +9,20 @@ import { EducationService } from 'src/app/services/education.service';
 })
 export class EducationComponent implements OnInit {
 
+  isLogged = false;
+
   constructor(private edServ: EducationService){}
 
   ed: Education[] = [];
 
   ngOnInit(): void {
+    var token = sessionStorage.getItem("currentUser");
+
+    if (token){  
+      this.isLogged = true;
+      console.log(this.isLogged);
+    }
+
     this.loadEducations();
   }
 

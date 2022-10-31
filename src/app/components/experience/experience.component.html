@@ -6,7 +6,7 @@
     <span *ngIf="dnd" class="content-card-thin">Drag & Drop Enabled</span>
     <img *ngIf="!dnd" title="Enable Drag & Drop" class="button" src="../../../assets/img/icon_menu.png" alt="D&D" (click)="toggleDnD()">
     <img *ngIf="dnd" title="Disable Drag & Drop" class="button" src="../../../assets/img/icon_arrange.png" alt="D&D" (click)="toggleDnD()">
-    <img title="Add Experience" class="button" src="../../../assets/img/icon_add.png" alt="add" routerLink="/addExperience">
+    <img title="Add Experience" class="button" src="../../../assets/img/icon_add.png" alt="add" routerLink="/addExperience" *ngIf="isLogged">
   </div>
 
   <div class="content-card" id="experience-content-card" *ngFor="let experience of xp" cdkDrag [cdkDragDisabled]="!dnd">
@@ -20,8 +20,8 @@
     </span>
 
     <div class="spacer"></div>
-    <img title="Delete Experience" class="button" src="../../../assets/img/icon_erase.png" alt="rm" (click)="deleteExperience(experience.id)">
-    <img title="Edit Experience" class="button" src="../../../assets/img/icon_edit.png" alt="ed" routerLink="/updateExperience/{{experience.id}}">
+    <img title="Delete Experience" class="button" src="../../../assets/img/icon_erase.png" alt="rm" (click)="deleteExperience(experience.id)" *ngIf="isLogged">
+    <img title="Edit Experience" class="button" src="../../../assets/img/icon_edit.png" alt="ed" routerLink="/updateExperience/{{experience.id}}" *ngIf="isLogged">
 
   </div>
   

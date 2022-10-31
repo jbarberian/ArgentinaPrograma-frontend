@@ -3,7 +3,7 @@
     <div class="content-title">
       <span class="content-element" id="content-element-title">Proyectos</span>
       <div class="spacer"></div>
-      <img title="Add Project" class="button" src="../../../assets/img/icon_add.png" alt="add" routerLink="/addProject">
+      <img title="Add Project" class="button" src="../../../assets/img/icon_add.png" alt="add" routerLink="/addProject" *ngIf="isLogged">
     </div>
 
     <div *ngFor="let project of pj" class="content-card">
@@ -16,8 +16,8 @@
         <span class="content-card-thin">{{project.description}}</span>
       </span>
       <div class="spacer"></div>
-      <img title="Delete Project" class="button" src="../../../assets/img/icon_erase.png" alt="rm" (click)="deleteProject(project.id)">
-      <img title="Edit Project" class="button" src="../../../assets/img/icon_edit.png" alt="ed" routerLink="/updateProject/{{project.id}}">
+      <img title="Delete Project" class="button" src="../../../assets/img/icon_erase.png" alt="rm" (click)="deleteProject(project.id)" *ngIf="isLogged">
+      <img title="Edit Project" class="button" src="../../../assets/img/icon_edit.png" alt="ed" routerLink="/updateProject/{{project.id}}" *ngIf="isLogged">
     </div>
 
   </div>

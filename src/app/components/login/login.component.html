@@ -1,0 +1,21 @@
+<div class="content" id="form">
+  <div class="content-title">
+    <span class="content-element" id="content-element-title">Log in</span>
+  </div>
+
+  <div class="content-card">
+    <form [formGroup]="form" class="form" (ngSubmit)="onSubmit($event)">
+    <!--<form class="form" (ngSubmit)="createEducation()">-->
+        <input class="input" type="text" formControlName="username" placeholder="Username" size="100">
+        <input class="input" type="password" formControlName="password" placeholder="Password" size="100">
+        
+        <div class="form-spacer"></div>
+
+        <div *ngIf="Username?.hasError('required') && Username?.touched" class="content-card-place"> You must enter a valid Username.</div>
+        <div *ngIf="Password?.hasError('required') && Password?.touched" class="content-card-place"> You must enter a valid Password.</div>
+        <!--minlength-->
+        <input type="image" title="Login" class="button" src="../../../assets/img/icon_accept.png">          
+        <img title="Go back" class="button" src="../../../assets/img/icon_left.png" alt="back" routerLink="/main">
+    </form>
+  </div>
+</div>

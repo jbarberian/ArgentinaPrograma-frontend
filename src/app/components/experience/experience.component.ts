@@ -11,6 +11,8 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/dra
 })
 export class ExperienceComponent implements OnInit {
 
+  isLogged = false;
+
   constructor(private xpServ: ExperienceService){}
 
   xp: Experience[] = [];
@@ -18,6 +20,13 @@ export class ExperienceComponent implements OnInit {
 
 
   ngOnInit(): void {
+    var token = sessionStorage.getItem("currentUser");
+
+    if (token){  
+      this.isLogged = true;
+      console.log(this.isLogged);
+    }
+    
     this.loadExperiences();
   }
 

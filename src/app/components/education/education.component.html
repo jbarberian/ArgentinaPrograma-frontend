@@ -3,7 +3,7 @@
     <div class="content-title">
       <span class="content-element" id="content-element-title">Educación</span>
       <div class="spacer"></div>
-      <img title="Add Education" class="button" src="../../../assets/img/icon_add.png" alt="add" routerLink="/addEducation">
+      <img title="Add Education" class="button" src="../../../assets/img/icon_add.png" alt="add" routerLink="/addEducation" *ngIf="isLogged">
     </div>
 
     <div *ngFor="let education of ed" class="content-card">
@@ -20,8 +20,8 @@
 
       <div class="spacer"></div>
       
-      <img title="Delete Education" class="button" src="../../../assets/img/icon_erase.png" alt="rm" (click)="deleteEducation(education.id)">
-      <img title="Edit Education" class="button" src="../../../assets/img/icon_edit.png" alt="ed" routerLink="/updateEducation/{{education.id}}">
+      <img title="Delete Education" class="button" src="../../../assets/img/icon_erase.png" alt="rm" (click)="deleteEducation(education.id)" *ngIf="isLogged">
+      <img title="Edit Education" class="button" src="../../../assets/img/icon_edit.png" alt="ed" routerLink="/updateEducation/{{education.id}}" *ngIf="isLogged">
 
     </div>
 
