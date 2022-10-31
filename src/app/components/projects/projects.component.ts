@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from 'src/app/models/project';
 import { ProjectService } from 'src/app/services/project.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-projects',
@@ -11,16 +12,16 @@ export class ProjectsComponent implements OnInit {
 
   isLogged = false;
 
-  constructor(private pjServ: ProjectService){}
+  constructor(private pjServ: ProjectService, private authServ: AuthService){}
 
   pj: Project[] = [];
 
   ngOnInit(): void {
-    var token = sessionStorage.getItem("currentUser");
+    
+    var currentUser = this.authServ.AuthUser;
 
-    if (token){  
+    if (currentUser && currentUser.jwttoken){  
       this.isLogged = true;
-      console.log(this.isLogged);
     }
     
     this.loadProjects();

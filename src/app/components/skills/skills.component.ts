@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Skill } from 'src/app/models/skill';
 import { SkillService } from 'src/app/services/skill.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-skills',
@@ -11,16 +12,16 @@ export class SkillsComponent implements OnInit {
 
   isLogged = false;
 
-  constructor(private skServ: SkillService){}
+  constructor(private skServ: SkillService, private authServ: AuthService){}
 
   sk: Skill[] = [];
 
   ngOnInit(): void {
-    var token = sessionStorage.getItem("currentUser");
+    
+    var currentUser = this.authServ.AuthUser;
 
-    if (token){  
+    if (currentUser && currentUser.jwttoken){  
       this.isLogged = true;
-      console.log(this.isLogged);
     }
     
     this.loadSkills();

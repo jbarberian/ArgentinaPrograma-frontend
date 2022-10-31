@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   {
     event.preventDefault;
     this.authServ.login(this.form.value).subscribe(data => {
-      console.log("DATA: " + JSON.stringify(data));
+      //console.log("DATA: " + JSON.stringify(data));
       this.route.navigate(['/main']);
     }, err => {
       alert("Error loggin in.");

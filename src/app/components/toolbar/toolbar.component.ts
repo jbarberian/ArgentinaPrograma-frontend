@@ -13,11 +13,10 @@ export class ToolbarComponent implements OnInit {
   constructor(private authServ: AuthService) { }
 
   ngOnInit(): void {
-    var token = sessionStorage.getItem("currentUser");
-
-    if (token){  
+    var currentUser = this.authServ.AuthUser;
+    
+    if (currentUser && currentUser.jwttoken){  
       this.isLogged = true;
-      console.log(this.isLogged);
     }
   }
 
@@ -26,7 +25,6 @@ export class ToolbarComponent implements OnInit {
   }
 
   logOut(): void {
-    console.log("logOut executed");
     window.sessionStorage.clear();
     window.location.reload();
   }

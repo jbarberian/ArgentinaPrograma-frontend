@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Experience } from 'src/app/models/experience';
 import { ExperienceService } from 'src/app/services/experience.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 import { CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
@@ -13,18 +14,16 @@ export class ExperienceComponent implements OnInit {
 
   isLogged = false;
 
-  constructor(private xpServ: ExperienceService){}
+  constructor(private xpServ: ExperienceService, private authServ: AuthService){}
 
   xp: Experience[] = [];
   dnd = false;
 
-
   ngOnInit(): void {
-    var token = sessionStorage.getItem("currentUser");
-
-    if (token){  
+    var currentUser = this.authServ.AuthUser;
+    
+    if (currentUser && currentUser.jwttoken){  
       this.isLogged = true;
-      console.log(this.isLogged);
     }
     
     this.loadExperiences();

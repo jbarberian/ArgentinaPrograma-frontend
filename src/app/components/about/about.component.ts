@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from 'src/app/models/person';
 import { PersonService } from 'src/app/services/person.service';
-
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-about',
@@ -12,16 +12,16 @@ export class AboutComponent implements OnInit {
 
   isLogged = false;
 
-  constructor(private pServ:PersonService){}
+  constructor(private pServ:PersonService, private authServ: AuthService){}
 
   p:Person = new Person("","","","","");
-
+  
   ngOnInit(): void {
-    var token = sessionStorage.getItem("currentUser");
+    
+    var currentUser = this.authServ.AuthUser;
 
-    if (token){  
+    if (currentUser && currentUser.jwttoken){  
       this.isLogged = true;
-      console.log(this.isLogged);
     }
 
     this.pServ.getPerson().subscribe(data => {this.p = data});

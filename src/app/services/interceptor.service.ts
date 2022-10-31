@@ -12,35 +12,16 @@ export class InterceptorService implements HttpInterceptor{
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     var currentUser = this.authServ.AuthUser;
-    //var token = JSON.parse(sessionStorage.getItem("currentUser")!).jwttoken; //podria definirlo en el seriviio auth y llamarlo?
-    //console.log("Interceptor: token: " + JSON.parse(token!).jwttoken);
-    //console.log("Interceptor: token: " + token);
-
-    if (currentUser && currentUser.accessToken)
+    
+    if (currentUser && currentUser.jwttoken)
     {
        req = req.clone({
         setHeaders:{
-          Authorization: `Bearer ${currentUser.accessToken}`
-        }
-
-      //headers: req.headers.append('Authorization', 'Bearer ' + token)
-
-
-//        headers: req.headers.set('Authorization', 'Bearer ' + token)
-  
-
-    
-                
-
-
-
-          
+          Authorization: `Bearer ${currentUser.jwttoken}`
+    }  
         })
     }
-    console.log("Serv. Interceptor esta corriendo " + JSON.stringify(currentUser));
+    //console.log("Serv. Interceptor esta corriendo " + JSON.stringify(currentUser));
     return next.handle(req);  
   }
-
-
-
 }

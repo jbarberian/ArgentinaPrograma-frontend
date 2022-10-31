@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Education } from 'src/app/models/education';
 import { EducationService } from 'src/app/services/education.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-education',
@@ -11,16 +12,16 @@ export class EducationComponent implements OnInit {
 
   isLogged = false;
 
-  constructor(private edServ: EducationService){}
+  constructor(private edServ: EducationService, private authServ: AuthService){}
 
   ed: Education[] = [];
 
   ngOnInit(): void {
-    var token = sessionStorage.getItem("currentUser");
-
-    if (token){  
+    
+    var currentUser = this.authServ.AuthUser;
+    
+    if (currentUser && currentUser.jwttoken){  
       this.isLogged = true;
-      console.log(this.isLogged);
     }
 
     this.loadEducations();
