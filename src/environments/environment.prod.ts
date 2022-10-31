@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiURL: "https://fierce-hollows-40695.herokuapp.com"
 };
