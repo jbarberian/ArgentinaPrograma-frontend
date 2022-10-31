@@ -13,7 +13,8 @@ import { EditAboutComponent } from './components/about/edit-about.component';
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo:'login', pathMatch:'full'},
+  //{ path: '', redirectTo:'login', pathMatch:'full'},
+  { path: '', redirectTo:'main', pathMatch:'full'},
   { path: 'login', component: LoginComponent},
   { path: 'main', component: PortfolioComponent},
   { path: 'updateAbout', component: EditAboutComponent},
