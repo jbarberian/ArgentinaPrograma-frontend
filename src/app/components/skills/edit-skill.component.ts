@@ -40,9 +40,10 @@ export class EditSkillComponent implements OnInit {
     const id = this.getCurrentSkillID();
 
     // Add trailing % if not set by user
-    if ( this.sk.percentage.charAt(length - 1) != "%") {
-      this.sk.percentage = this.sk.percentage + "%";
-    }
+    //if ( this.sk.percentage.charAt(length - 1) != "%") {
+    //  this.sk.percentage = this.sk.percentage + "%";
+    //}
+    this.sk.percentage = this.sk.percentage.replace(/%/g,"") + "%";
     
     this.skServ.updateSkill(id, this.sk).subscribe(
         data => {
