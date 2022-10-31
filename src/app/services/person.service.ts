@@ -9,8 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class PersonService {
 
-  url="http://localhost:8080";
-  //url=environment.apiURL;
+  url=environment.apiURL;
 
   constructor(private http:HttpClient){}
 
