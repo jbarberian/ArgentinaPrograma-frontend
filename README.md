@@ -11,7 +11,7 @@ $ ng serve
 $ ng build  
 $ firebase deploy  
 
-### TODO
+## TODO
 * Responsive.
 * Mejora en la funcionalidad Drag&Drop. Actualmente funciona solo para el componente Experiencia y de manera no permanente.
 - - - -
