@@ -8,8 +8,8 @@ $ npm install
 $ ng serve
 
 ## Deploy
-$ ng build
-$ firebase deploy
+$ ng build  
+$ firebase deploy  
 
 ### TODO
 * Responsive.
